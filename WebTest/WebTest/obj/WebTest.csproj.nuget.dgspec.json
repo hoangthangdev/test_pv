@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thanghp\\source\\repos\\WebTest\\WebTest\\WebTest.csproj": {}
+    "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thanghp\\source\\repos\\WebTest\\WebTest\\WebTest.csproj": {
+    "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thanghp\\source\\repos\\WebTest\\WebTest\\WebTest.csproj",
+        "projectUniqueName": "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
         "projectName": "WebTest",
-        "projectPath": "C:\\Users\\thanghp\\source\\repos\\WebTest\\WebTest\\WebTest.csproj",
+        "projectPath": "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
         "packagesPath": "C:\\Users\\thanghp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thanghp\\source\\repos\\WebTest\\WebTest\\obj\\",
+        "outputPath": "C:\\test_pv\\WebTest\\WebTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,50 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools.DotNet": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

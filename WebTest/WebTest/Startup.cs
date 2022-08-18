@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using WebTest.AppDBContext;
+using WebTest.Models;
+using WebTest.Service;
 
 namespace WebTest
 {
@@ -24,6 +29,24 @@ namespace WebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddDbContext<ManagerContext>(options => {
+                string connectstring = Configuration.GetConnectionString("WebtestContext");
+                options.UseSqlServer(connectstring);
+                options.UseLoggerFactory(GetLoggerFactory());
+            });
+            services.AddScoped<IOrder, OrderService>();
+        }
+        private ILoggerFactory GetLoggerFactory()
+        {
+            IServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.AddLogging(builder =>
+                builder.AddConsole()
+                    .AddFilter(DbLoggerCategory.Database.Command.Name,
+                        LogLevel.Information));
+            return serviceCollection.BuildServiceProvider()
+                .GetService<ILoggerFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

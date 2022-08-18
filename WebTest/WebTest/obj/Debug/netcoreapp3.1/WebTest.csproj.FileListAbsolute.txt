@@ -1,0 +1,8 @@
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.csproj.AssemblyReference.cache
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.AssemblyInfoInputs.cache
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.AssemblyInfo.cs
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.csproj.CoreCompileInputs.cache
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.MvcApplicationPartsAssemblyInfo.cache
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.RazorAssemblyInfo.cache
+C:\test_pv\WebTest\WebTest\obj\Debug\netcoreapp3.1\WebTest.RazorAssemblyInfo.cs
