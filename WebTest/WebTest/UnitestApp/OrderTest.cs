@@ -8,7 +8,7 @@ namespace Service.Test
     public class OrderTest
     {
         [SetUp]
-        public void Setup(ManagerContext manager)
+        public void Setup(ManagerAppContext manager)
         {
             _managerContext = manager;
         }
@@ -18,7 +18,7 @@ namespace Service.Test
         {
             _managerContext.DeleteAllData();
         }
-        private ManagerContext _managerContext;
+        private ManagerAppContext _managerContext;
         
         [TestCase]
         public void GetAllOrderTest_Exit()

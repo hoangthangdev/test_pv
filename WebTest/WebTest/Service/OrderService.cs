@@ -13,9 +13,9 @@ namespace WebTest.Service
 {
     public class OrderService : IOrder
     {
-        private readonly ManagerContext _managerContext;
+        private readonly ManagerAppContext _managerContext;
 
-        public OrderService(ManagerContext manager)
+        public OrderService(ManagerAppContext manager)
         {
             _managerContext = manager;
         }

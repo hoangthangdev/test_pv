@@ -29,9 +29,8 @@ namespace WebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddRazorPages();
 
-            services.AddDbContext<ManagerContext>(options => {
+            services.AddDbContext<ManagerAppContext>(options => {
                 string connectstring = Configuration.GetConnectionString("WebtestContext");
                 options.UseSqlServer(connectstring);
                 options.UseLoggerFactory(GetLoggerFactory());

@@ -24,7 +24,7 @@ namespace WebTest.Controllers
             _order = order;
         }
 
-        public async Task<IActionResult> Index(string textSearch, int pageIndex = 1)
+        public IActionResult Index(string textSearch, int pageIndex = 1)
         {
             int totalRow;
             var orderData = _order.GetAllOrder(textSearch, pageIndex, out totalRow);
