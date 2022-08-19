@@ -62,21 +62,3 @@
         <a asp-controller="Home" asp-action="CreateOrder">Create new order</a>
     </div>
 </div>
-<script>
-    function isIncognito(callback){
-        var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
-        if (!fs) {
-            callback(false);
-        } else {
-            fs(window.TEMPORARY,
-                100,
-                callback.bind(undefined, false),
-                callback.bind(undefined, true)
-            );
-        }
-    }
-    isIncognito(function(itIs) {
-        if (itIs) return false;
-        else return true;
-    });
-</script>

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebTest.AppDBContext;
+using WebTest.Models;
 
 namespace WebTest.Migrations
 {
@@ -36,6 +37,19 @@ namespace WebTest.Migrations
 
                     b.ToTable("Categories");
                 });
+            modelBuilder.Entity<Category>()
+                .HasData(
+                    new Category
+                    {
+                        Name = "CATEGORY 1",
+                        Description = "Description"
+                    },
+                    new Category
+                    {
+                        Name = "CATEGORY 2",
+                        Description = "Description"
+                    }
+                );
 
             modelBuilder.Entity("WebTest.Models.Customer", b =>
                 {
@@ -57,6 +71,20 @@ namespace WebTest.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity<Customer>()
+                .HasData(
+                    new Customer
+                    {
+                        Name = "CATEGORY 1",
+                        Address = "123/123"
+
+                    },
+                    new Customer
+                    {
+                        Name = "CATEGORY 2",
+                        Address = "11/112"
+                    }
+                );
             modelBuilder.Entity("WebTest.Models.Order", b =>
                 {
                     b.Property<int>("Id")
