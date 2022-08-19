@@ -8,7 +8,6 @@ namespace WebTest.AppDBContext
 {
     public class ManagerAppContext : DbContext
     {
-
         public ManagerAppContext(DbContextOptions<ManagerAppContext> options) : base(options)
         {
         }

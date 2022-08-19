@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using WebTest.AppDBContext;
 using WebTest.Models;
 using WebTest.ViewModel;
@@ -14,10 +15,11 @@ namespace WebTest.Service
     public class OrderService : IOrder
     {
         private readonly ManagerAppContext _managerContext;
-
-        public OrderService(ManagerAppContext manager)
+        private readonly ILogger<OrderService> _logger;
+        public OrderService(ILogger<OrderService> logger, ManagerAppContext manager)
         {
             _managerContext = manager;
+            _logger = logger;
         }
         public List<OrderOutDto> GetAllOrder(string textSearch, int pageIndex, out int totalRow)
         {
@@ -55,11 +57,9 @@ namespace WebTest.Service
             }
             catch (Exception e)
             {
-                return false;
-
+                _logger.LogError(e,"Create order err");
                 throw;
             }
-
             return true;
         }
     }

@@ -35,6 +35,11 @@ namespace WebTest
                 options.UseSqlServer(connectstring);
                 options.UseLoggerFactory(GetLoggerFactory());
             });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdministratorRole",
+                    policy => policy.RequireRole("Administrator"));
+            });
             services.AddScoped<IOrder, OrderService>();
         }
         private ILoggerFactory GetLoggerFactory()
@@ -65,6 +70,8 @@ namespace WebTest
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

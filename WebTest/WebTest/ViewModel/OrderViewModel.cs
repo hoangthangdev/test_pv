@@ -9,9 +9,9 @@ namespace WebTest.ViewModel
     {
         public int Id { get; set; }
 
-        public List<SelectListItem> Customer { get; set; }
+        public List<SelectListItem> Customers { get; set; }
 
-        public List<SelectListItem> Product { get; set; }
+        public List<SelectListItem> Products { get; set; }
 
         public decimal Amount { get; set; }
 

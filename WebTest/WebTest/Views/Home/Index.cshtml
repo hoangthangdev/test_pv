@@ -8,20 +8,23 @@
 
 <h4>Create new order</h4>
 <div class="container">
-    <form action="Index">
+    <form asp-controller="Home" asp-action="Index"
+          data-ajax="true"
+          data-ajax-method="Get"
+          data-ajax-update="product"
+          data_ajax_mode="replace">
         <div class="row">
             <label class="col-4">Enter category to search</label>
             <div class="col-3">
-                <input />
+                <input type="text" id="textSearch" name="textSearch" value="@ViewBag.TextSearch"/>
             </div>
             <div class="col-5">
                 <button type="submit">Search</button>
             </div>
         </div>
-    </form>
-    <div>
-        <table>
-            <thead>
+        <div>
+            <table>
+                <thead>
                 <tr>
                     <th>Category Name</th>
                     <th>Product Name</th>
@@ -29,64 +32,51 @@
                     <th>Order Datetime</th>
                     <th>Amount</th>
                 </tr>
-            </thead>
-            <tbody>
-            @foreach (var order in Model)
-            {
-                <tr>
+                </thead>
+                <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
 
-                </tr>
-            }
-            </tbody>
-        </table>
-        <div>
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#"> &laquo; First </a></li>
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                <li class="page-item"><a class="page-link" href="#">Last &raquo;</a></li>
-              </ul>
-            </nav>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)"  asp-controller="Home" asp-action="Index"  asp-route-pageIndex="1"> &laquo; First </a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)"  asp-controller="Home" asp-action="Index"  asp-route-pageIndex="@((ViewBag.PageIndex - 1) == 0? 1:ViewBag.PageIndex - 1)">Previous</a></li>
+                        @for (int i = 1; i <= ViewBag.TotalRow / 10; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)"  asp-controller="Home" asp-action="Index"  asp-route-pageIndex="@i">@i</a></li>
+                        }
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)"  asp-controller="Home" asp-action="Index"  asp-route-pageIndex="@((ViewBag.TotalRow / 10) >= (ViewBag.PageIndex + 1)?ViewBag.PageIndex + 1:ViewBag.PageIndex )">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)"  asp-controller="Home" asp-action="Index"  asp-route-pageIndex="@(ViewBag.TotalRow / 10)">Last &raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
+    </form>
     <div class="float-right pr-5">
-        <a onclick="$('exampleModalToggle').show()">Create new order</a>
+        <a asp-controller="Home" asp-action="CreateOrder">Create new order</a>
     </div>
 </div>
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Show a second modal and hide this one with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Hide this modal and show the first with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
-      </div>
-    </div>
-  </div>
-</div>
-<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
+<script>
+    function isIncognito(callback){
+        var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+        if (!fs) {
+            callback(false);
+        } else {
+            fs(window.TEMPORARY,
+                100,
+                callback.bind(undefined, false),
+                callback.bind(undefined, true)
+            );
+        }
+    }
+    isIncognito(function(itIs) {
+        if (itIs) return false;
+        else return true;
+    });
+</script>
