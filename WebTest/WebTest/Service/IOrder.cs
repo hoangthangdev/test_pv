@@ -9,7 +9,7 @@ namespace WebTest.Service
 {
     public interface IOrder
     {
-        List<OrderOutDto> GetAllOrder(string textSearch, int pageIndex, out int totalRow);
+        List<OrderOutDto> GetAllOrder(string textSearch,int pageIndex, out int totalRow);
 
         Task<bool> CreateOrder(OrderViewModel order);
     }

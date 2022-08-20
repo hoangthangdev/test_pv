@@ -9,13 +9,17 @@ namespace WebTest.ViewModel
     {
         public int Id { get; set; }
 
+        public int CustomerId { get; set; }
+
         public List<SelectListItem> Customers { get; set; }
+
+        public int ProductId { get; set; }
 
         public List<SelectListItem> Products { get; set; }
 
         public decimal Amount { get; set; }
 
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderDate { get; set; } = DateTime.Now;
 
     }
 }

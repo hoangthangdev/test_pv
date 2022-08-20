@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj": {}
+    "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj": {}
   },
   "projects": {
-    "C:\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj": {
+    "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj",
+        "projectUniqueName": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj",
         "projectName": "BasicTest",
-        "projectPath": "C:\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj",
-        "packagesPath": "C:\\Users\\thanghp\\.nuget\\packages\\",
-        "outputPath": "C:\\test_pv\\WebTest\\BasicTest\\obj\\",
+        "projectPath": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\BasicTest\\BasicTest.csproj",
+        "packagesPath": "C:\\Users\\helo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\BasicTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\thanghp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\helo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.episerver.com/feed/packages.svc/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {
-                "projectPath": "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj"
+              "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {
+                "projectPath": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\WebTest.csproj"
               }
             }
           }
@@ -95,24 +97,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {
+    "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\WebTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
+        "projectUniqueName": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
         "projectName": "WebTest",
-        "projectPath": "C:\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
-        "packagesPath": "C:\\Users\\thanghp\\.nuget\\packages\\",
-        "outputPath": "C:\\test_pv\\WebTest\\WebTest\\obj\\",
+        "projectPath": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\WebTest.csproj",
+        "packagesPath": "C:\\Users\\helo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\helo\\source\\repos\\test_pv\\WebTest\\WebTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\thanghp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\helo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,6 +123,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.episerver.com/feed/packages.svc/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -138,6 +142,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -160,7 +168,23 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.EventSource": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.TraceSource": {
               "target": "Package",
               "version": "[6.0.0, )"
             },
@@ -187,6 +211,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.28, 3.1.28]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -195,7 +225,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

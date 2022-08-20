@@ -36,7 +36,7 @@ namespace WebTest.Service
                              CustomerName = cus.Name,
                              CategoryName = lct.Name,
                              OrderDate = od.OrderDate,
-                             Amount = pd.Price
+                             Amount = od.Amount
                          };
             var dt = orders.Skip((pageIndex - 1) * 10).Take(10).ToList();
             totalRow = orders.ToList().Count;
@@ -49,10 +49,17 @@ namespace WebTest.Service
             {
                 if (order == null)
                     return false;
+                var od = new Order
+                {
+                    CustomerId = order.CustomerId,
+                    ProductId = order.ProductId,
+                    Amount = order.Amount,
+                    OrderDate = order.OrderDate,
+                };
                 if (order.Id > 0)
-                    _managerContext.Update(order);
+                    _managerContext.Update(od);
                 else
-                    _managerContext.Add(order);
+                    _managerContext.Add(od);
                 _ = _managerContext.SaveChangesAsync();
             }
             catch (Exception e)

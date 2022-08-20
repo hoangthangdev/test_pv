@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +13,9 @@ using Microsoft.Extensions.Logging;
 using WebTest.AppDBContext;
 using WebTest.Models;
 using WebTest.Service;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebTest
 {
@@ -35,11 +38,7 @@ namespace WebTest
                 options.UseSqlServer(connectstring);
                 options.UseLoggerFactory(GetLoggerFactory());
             });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("RequireAdministratorRole",
-                    policy => policy.RequireRole("Administrator"));
-            });
+
             services.AddScoped<IOrder, OrderService>();
         }
         private ILoggerFactory GetLoggerFactory()

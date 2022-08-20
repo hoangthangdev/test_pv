@@ -20,14 +20,5 @@ namespace WebTest.AppDBContext
         {
 
         }
-
-
-        public void DeleteAllData()
-        {
-            foreach (var entity in Orders)
-            {
-                Orders.Remove(entity);
-            }
-        }
     }
 }
